@@ -1,0 +1,51 @@
+{
+  "name": "eslint-config-sensible-prettier-typescript",
+  "version": "1.0.0",
+  "description": "Sensible default eslint rules and prettier rules for Typescript projects",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier -w *.js",
+    "lint": "eslint -c index.js .",
+    "test": "npm run lint && eslint -c index.js test/*.ts"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-xo-space": "^0.34.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-mocha": "^10.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-perfectionist": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "npm-check-updates": "^16.14.6",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "volta": {
+    "node": "18.18.2",
+    "npm": "9.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/james-hu/eslint-config-sensible-typescript.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-config",
+    "sensible",
+    "defaults",
+    "prettier",
+    "typescript"
+  ],
+  "author": "James Hu",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/james-hu/eslint-config-sensible-typescript/issues"
+  },
+  "homepage": "https://github.com/james-hu/eslint-config-sensible-typescript#readme"
+}
