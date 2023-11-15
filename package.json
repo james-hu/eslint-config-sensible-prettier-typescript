@@ -21,10 +21,12 @@
     "eslint-plugin-unicorn": "^49.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.52.0",
     "npm-check-updates": "^16.14.6",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8"
   },
   "volta": {
     "node": "18.18.2",
@@ -37,6 +39,7 @@
   "keywords": [
     "eslint",
     "eslintplugin",
+    "eslintconfig",
     "eslint-config",
     "sensible",
     "defaults",
