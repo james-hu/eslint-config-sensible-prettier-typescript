@@ -14,7 +14,7 @@ In your `.eslintrc.json`:
 
 ```json
 {
-    "extends": "@scope/eslint-config"
+    "extends": "sensible-prettier-typescript"
 }
 ```
 
