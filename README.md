@@ -22,13 +22,15 @@ npm i -D @handy-common-utils/dev-dependencies-jest
 
 In your `.eslintrc.js`:
 ```javascript
-require("@rushstack/eslint-patch/modern-module-resolution");
+/* eslint-disable unicorn/prefer-module, node/no-extraneous-require, unicorn/prefer-module */
+
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   extends: [
-    'sensible-prettier-typescript'
+    'sensible-prettier-typescript',
   ],
-  parserOptions: { tsconfigRootDir: __dirname }
+  parserOptions: { tsconfigRootDir: __dirname },
 };
 ```
 
