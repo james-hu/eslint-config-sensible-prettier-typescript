@@ -31,6 +31,7 @@ module.exports = {
     'sensible-prettier-typescript',
   ],
   parserOptions: { tsconfigRootDir: __dirname },
+  // place your customisation here
 };
 ```
 
@@ -45,10 +46,9 @@ Or in your `.eslintrc.json`:
 And in your `prettier.config.js` or `.prettierrc.js`:
 
 ```javascript
-import config from 'eslint-config-sensible-prettier-typescript/prettier.config';
-
-export default {
+const config = require('eslint-config-sensible-prettier-typescript/prettier.config');
+module.exports = {
   ...config,
-  // your overrides
+  // place your customisation here
 };
 ```
