@@ -5,6 +5,7 @@ module.exports = {
     'plugin:node/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:unicorn/recommended',
     'plugin:perfectionist/recommended-natural',
     'prettier',
   ],
