@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sensible-prettier-typescript",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sensible default eslint rules and prettier rules for Typescript projects",
   "main": "index.js",
   "scripts": {
