@@ -74,6 +74,7 @@ module.exports = {
     'unicorn/empty-brace-spaces': 'off',
     'unicorn/numeric-separators-style': 'off',
     'unicorn/no-null': 'off',
+    'unicorn/no-object-as-default-parameter': 'off',
     'node/no-extraneous-import': 'off',
     'no-await-in-loop': 'off',
     'no-useless-constructor': 'off',
