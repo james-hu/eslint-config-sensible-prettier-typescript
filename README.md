@@ -52,3 +52,11 @@ module.exports = {
   // place your customisation here
 };
 ```
+
+## Develop
+
+Upgrade all dependencies:
+
+```
+npx npm-check-updates -u && npm install && npm audit fix
+```

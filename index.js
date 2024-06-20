@@ -66,6 +66,7 @@ module.exports = {
         offsetTernaryExpressions: true,
       },
     ],
+    'unicorn/prefer-module': 'warn',
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-array-for-each': 'off',
