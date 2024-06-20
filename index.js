@@ -63,6 +63,7 @@ module.exports = {
       {
         MemberExpression: 'off',
         SwitchCase: 1,
+        offsetTernaryExpressions: true,
       },
     ],
     'unicorn/prevent-abbreviations': 'off',
