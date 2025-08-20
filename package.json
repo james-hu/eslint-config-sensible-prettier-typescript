@@ -8,26 +8,24 @@
     "lint": "eslint -c index.js .",
     "test": "npm run lint && eslint -c index.js test/*.ts"
   },
-  "dependencies": {
-    "@rushstack/eslint-patch": "^1.10.3",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-xo-space": "^0.35.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-mocha": "^10.4.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-perfectionist": "^2.11.0",
-    "eslint-plugin-unicorn": "^54.0.0"
-  },
   "devDependencies": {
-    "npm-check-updates": "^16.14.20",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.2"
+    "npm-check-updates": "^18.0.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "eslint": ">= 8"
+    "@rushstack/eslint-patch": ">=1.10.3",
+    "@typescript-eslint/eslint-plugin": ">=7.13.1",
+    "@typescript-eslint/parser": ">=7.13.1",
+    "eslint": ">= 8",
+    "eslint-config-prettier": ">=9.1.0",
+    "eslint-config-xo-space": ">=0.35.0",
+    "eslint-import-resolver-typescript": ">=3.6.1",
+    "eslint-plugin-import": ">=2.29.1",
+    "eslint-plugin-mocha": ">=10.4.3",
+    "eslint-plugin-node": ">=11.1.0",
+    "eslint-plugin-perfectionist": ">=2.11.0",
+    "eslint-plugin-unicorn": ">=54.0.0"
   },
   "volta": {
     "node": "18.18.2",
