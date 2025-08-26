@@ -33,6 +33,7 @@ const commonRules = {
   'perfectionist/sort-interfaces': 'off',
   'perfectionist/sort-enums': 'off',
   'perfectionist/sort-object-types': 'off',
+  'perfectionist/sort-modules': 'off',
 
   'unicorn/prefer-module': 'warn',
   'unicorn/prevent-abbreviations': 'off',
