@@ -5,7 +5,8 @@
   "scripts": {
     "prettier": "prettier -w .",
     "lint": "eslint .",
-    "test": "npm run prettier && npm run lint && rm -rf dist && tsc && prettier --config ./test/prettier.config.cjs --write . && eslint --config ./test/eslint.config.cjs ."
+    "pretest": "rm -rf dist && tsc",
+    "test": "npm run prettier && npm run lint && prettier --config ./test/prettier.config.cjs --write . && eslint --config ./test/eslint.config.cjs ."
   },
   "files": [
     "dist"
