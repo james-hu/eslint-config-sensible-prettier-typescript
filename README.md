@@ -29,8 +29,8 @@ This package provides **configuration builder functions** that return ESLint 9 f
 Create an `eslint.config.js` file:
 
 ```javascript
-const { defineConfig } = require('eslint/config');
 const { eslintConfig } = require('eslint-config-sensible-prettier-typescript');
+const { defineConfig } = require('eslint/config');
 
 module.exports = defineConfig([
   ...eslintConfig(),
@@ -49,8 +49,8 @@ module.exports = defineConfig([
 Create an `eslint.config.js` file:
 
 ```javascript
-import { defineConfig } from 'eslint/config';
 import { eslintConfig } from 'eslint-config-sensible-prettier-typescript';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   ...eslintConfig(),
