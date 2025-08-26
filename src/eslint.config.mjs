@@ -58,6 +58,9 @@ const commonRules = {
     },
   ],
 
+  'jsdoc/require-jsdoc': ['warn', {
+    publicOnly: true,
+  }],
   'jsdoc/require-param': 'warn',
   'jsdoc/require-returns': 'warn',
   'capitalized-comments': 'off',
