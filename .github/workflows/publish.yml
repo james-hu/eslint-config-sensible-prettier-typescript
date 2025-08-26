@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run tests # It also generates the dist folder
+      - name: Run tests
         uses: handy-common-utils/automation/github/actions/ci-node@main
         with:
           node-version: .nvmrc
