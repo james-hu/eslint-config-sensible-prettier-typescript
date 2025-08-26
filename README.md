@@ -94,10 +94,3 @@ export default {
 };
 ```
 
-## Contribution
-
-Upgrade all dependencies:
-
-```bash
-npx npm-check-updates -u && npm install && npm audit fix
-```
