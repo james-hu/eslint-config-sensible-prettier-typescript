@@ -6,7 +6,7 @@
   "scripts": {
     "prettier": "prettier -w .",
     "lint": "eslint .",
-    "test": "npm run lint && eslint -c index.js test/*.ts"
+    "test": "npm run prettier &&npm run lint"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
