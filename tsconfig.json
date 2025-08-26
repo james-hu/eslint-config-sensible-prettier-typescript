@@ -1,8 +1,8 @@
 {
-  "include": ["src/**/*", "test/**/*"],
+  "include": ["src"],
+  "exclude": ["node_modules", "test"],
   "compilerOptions": {
     // File Layout
-    "rootDir": "./",
     "outDir": "./dist",
 
     // Environment Settings

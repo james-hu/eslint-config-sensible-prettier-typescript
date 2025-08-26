@@ -1,5 +1,5 @@
 import defaultEslintConfig from './eslint.config.mjs';
-import * as defaultPrettierConfig from './prettier.config.cjs';
+import defaultPrettierConfig from './prettier.config.cjs';
 
 /**
  * Build ESLint config

@@ -2,11 +2,18 @@
   "name": "eslint-config-sensible-prettier-typescript",
   "version": "1.5.0",
   "description": "Sensible default eslint rules and prettier rules for Typescript projects",
-  "main": "index.js",
   "scripts": {
     "prettier": "prettier -w .",
     "lint": "eslint .",
-    "test": "npm run prettier &&npm run lint"
+    "test": "npm run prettier && npm run lint && rm -rf dist && tsc && prettier --config ./test/prettier.config.cjs --write . && eslint --config ./test/eslint.config.cjs ."
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.dts",
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/node": "^24.3.0"
