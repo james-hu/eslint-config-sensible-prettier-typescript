@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Run tests
+        uses: handy-common-utils/automation/github/actions/ci-node@main
+        with:
+          node-version: .nvmrc
       - name: Publish to NPM registry
         uses: handy-common-utils/automation/github/actions/publish-npm@main
         with:
