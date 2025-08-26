@@ -21,15 +21,14 @@ npm i -D @handy-common-utils/dev-dependencies-jest
 ## Usage
 
 In your `.eslintrc.js`:
+
 ```javascript
 /* eslint-disable unicorn/prefer-module, node/no-extraneous-require, unicorn/prefer-module */
 
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
-  extends: [
-    'sensible-prettier-typescript',
-  ],
+  extends: ['sensible-prettier-typescript'],
   parserOptions: { tsconfigRootDir: __dirname },
   // place your customisation here
 };
@@ -39,7 +38,7 @@ Or in your `.eslintrc.json`:
 
 ```json
 {
-    "extends": "sensible-prettier-typescript"
+  "extends": "sensible-prettier-typescript"
 }
 ```
 

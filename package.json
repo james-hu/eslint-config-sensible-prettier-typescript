@@ -4,32 +4,30 @@
   "description": "Sensible default eslint rules and prettier rules for Typescript projects",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier -w *.js",
-    "lint": "eslint -c index.js .",
+    "prettier": "prettier -w .",
+    "lint": "eslint .",
     "test": "npm run lint && eslint -c index.js test/*.ts"
   },
   "devDependencies": {
+    "@types/node": "^24.3.0",
     "npm-check-updates": "^18.0.2",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "@rushstack/eslint-patch": ">=1.10.3",
-    "@typescript-eslint/eslint-plugin": ">=7.13.1",
-    "@typescript-eslint/parser": ">=7.13.1",
-    "eslint": ">= 8",
-    "eslint-config-prettier": ">=9.1.0",
+    "@eslint-community/eslint-utils": ">=4.7.0",
+    "@rushstack/eslint-patch": ">=1.12.0",
+    "@typescript-eslint/eslint-plugin": ">=8.41.0",
+    "@typescript-eslint/parser": ">=8.41.0",
+    "eslint": ">=9.34.0",
+    "eslint-config-prettier": ">=10.1.8",
     "eslint-config-xo-space": ">=0.35.0",
-    "eslint-import-resolver-typescript": ">=3.6.1",
-    "eslint-plugin-import": ">=2.29.1",
-    "eslint-plugin-mocha": ">=10.4.3",
-    "eslint-plugin-node": ">=11.1.0",
-    "eslint-plugin-perfectionist": ">=2.11.0",
-    "eslint-plugin-unicorn": ">=54.0.0"
-  },
-  "volta": {
-    "node": "18.18.2",
-    "npm": "9.8.1"
+    "eslint-import-resolver-typescript": ">=4.4.4",
+    "eslint-plugin-import": ">=2.32.0",
+    "eslint-plugin-jsdoc": "^54.1.1",
+    "eslint-plugin-mocha": ">=11.1.0",
+    "eslint-plugin-perfectionist": ">=4.15.0",
+    "eslint-plugin-unicorn": ">=60.0.0"
   },
   "repository": {
     "type": "git",
