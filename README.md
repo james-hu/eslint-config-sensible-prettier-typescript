@@ -1,6 +1,6 @@
 # eslint-config-sensible-prettier-typescript
 
-Sensible default eslint rules and prettier rules for Typescript projects
+Sensible default ESLint rules and Prettier rules for TypeScript projects with ESLint 9 flat config support
 
 ## Install
 
@@ -20,42 +20,84 @@ npm i -D @handy-common-utils/dev-dependencies-jest
 
 ## Usage
 
-In your `.eslintrc.js`:
+This package provides **configuration builder functions** that return ESLint 9 flat config objects and Prettier configurations. These can be imported and customized as needed.
+
+### ESLint Configuration
+
+#### CommonJS
+
+Create an `eslint.config.js` file:
 
 ```javascript
-/* eslint-disable unicorn/prefer-module, node/no-extraneous-require, unicorn/prefer-module */
+const { defineConfig } = require('eslint/config');
+const { eslintConfig } = require('eslint-config-sensible-prettier-typescript');
 
-require('@rushstack/eslint-patch/modern-module-resolution');
+module.exports = defineConfig([
+  ...eslintConfig(),
+  // Add your customizations here
+  {
+    rules: {
+      'no-console': 'warn',
+      // Your custom rules...
+    },
+  },
+]);
+```
+
+#### ES Modules
+
+Create an `eslint.config.js` file:
+
+```javascript
+import { defineConfig } from 'eslint/config';
+import { eslintConfig } from 'eslint-config-sensible-prettier-typescript';
+
+export default defineConfig([
+  ...eslintConfig(),
+  // Add your customizations here
+  {
+    rules: {
+      'no-console': 'warn',
+      // Your custom rules...
+    },
+  },
+]);
+```
+
+### Prettier Configuration
+
+#### CommonJS
+
+```javascript
+// prettier.config.js
+const { prettierConfig } = require('eslint-config-sensible-prettier-typescript');
 
 module.exports = {
-  extends: ['sensible-prettier-typescript'],
-  parserOptions: { tsconfigRootDir: __dirname },
-  // place your customisation here
+  ...prettierConfig(),
+  // Override or extend the default config
+  printWidth: 120,
+  tabWidth: 4,
 };
 ```
 
-Or in your `.eslintrc.json`:
-
-```json
-{
-  "extends": "sensible-prettier-typescript"
-}
-```
-
-And in your `prettier.config.js` or `.prettierrc.js`:
+#### ES Modules
 
 ```javascript
-const config = require('eslint-config-sensible-prettier-typescript/prettier.config');
-module.exports = {
-  ...config,
-  // place your customisation here
+// prettier.config.js
+import { prettierConfig } from 'eslint-config-sensible-prettier-typescript';
+
+export default {
+  ...prettierConfig(),
+  // Override or extend the default config
+  printWidth: 120,
+  tabWidth: 4,
 };
 ```
 
-## Develop
+## Contribution
 
 Upgrade all dependencies:
 
-```
+```bash
 npx npm-check-updates -u && npm install && npm audit fix
 ```
