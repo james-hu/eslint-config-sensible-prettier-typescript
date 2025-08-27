@@ -241,7 +241,7 @@ export function buildJsConfig(files, languageOptions) {
  * - JavaScript configurations for various file types
  * - Browser and Node.js globals where appropriate
  *
- * @param {object} options - Configuration options
+ * @param {object} options - Optional configuration options
  * @param {string} options.defaultSourceType - Default source type for TypeScript and JavaScript files that don't have source type indicated in the file name extension
  *
  * @returns {import('eslint').Linter.Config[]} Complete ESLint flat configuration array
@@ -259,7 +259,7 @@ export function buildJsConfig(files, languageOptions) {
  * ```
  */
 export function buildESLintConfig(options) {
-  const { defaultSourceType } = options;
+  const { defaultSourceType } = options ?? {};
   return defineConfig([
     {
       ignores: ['dist', 'node_modules', '.vscode'],
