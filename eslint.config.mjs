@@ -1,5 +1,5 @@
 import { defineConfig } from 'eslint/config';
 
-import defaultEslintConfig from './src/eslint.config.mjs';
+import { buildESLintConfig } from './src/eslint.config.mjs';
 
-export default defineConfig([...defaultEslintConfig]);
+export default defineConfig([...buildESLintConfig({ defaultSourceType: 'commonjs' })]);

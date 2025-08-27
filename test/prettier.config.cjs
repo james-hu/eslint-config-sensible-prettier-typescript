@@ -1,6 +1,6 @@
-const { prettierConfig } = require('../dist');
+const { buildPrettierConfig } = require('../dist');
 
 module.exports = {
-  ...prettierConfig(),
+  ...buildPrettierConfig(),
   // Override or extend the default config
 };
