@@ -93,3 +93,49 @@ export default {
   tabWidth: 4,
 };
 ```
+
+# Customizing ESLint Configurations
+
+## `customiseESLintConfig`
+
+The `customiseESLintConfig` function allows you to programmatically modify specific configuration objects within an ESLint flat config array. This is useful for applying project-specific customizations to certain file types or rule sets.
+
+### Usage
+
+```javascript
+const { buildESLintConfig, customiseESLintConfig } = require('./src/eslint.config.cjs');
+
+const configArray = buildESLintConfig({ defaultSourceType: 'module' });
+
+// Example: Change all TypeScript configs to use 'commonjs' sourceType
+customiseESLintConfig(
+  configArray,
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('.ts')),
+  (cfg) => { cfg.languageOptions.parserOptions.sourceType = 'commonjs'; }
+);
+
+// Export the customized config
+module.exports = configArray;
+```
+
+### Parameters
+
+- **configArray**: The ESLint configuration array to modify.
+- **selector**: A function that receives each config object and returns `true` for configs you want to modify.
+- **modifier**: A function that receives each selected config object and applies your changes.
+
+### Example: Disable a rule for all `.tsx` files
+
+```javascript
+customiseESLintConfig(
+  configArray,
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('.tsx')),
+  (cfg) => { cfg.rules['no-console'] = 'off'; }
+);
+```
+
+### When to use
+
+- To override rules for specific file types.
+- To change parser options for certain configs.
+- To apply project-specific tweaks without

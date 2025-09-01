@@ -359,7 +359,7 @@ export function buildESLintConfig(options) {
  *
  * // Modify all TypeScript configurations
  * customiseConfig(config,
- *   (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('.ts'),
+ *   (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('.ts')),
  *   (cfg) => { cfg.languageOptions.parserOptions.sourceType = 'commonjs'; }
  * );
  * ```
