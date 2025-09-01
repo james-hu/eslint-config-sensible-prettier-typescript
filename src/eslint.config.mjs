@@ -64,9 +64,9 @@ function commonRules() {
         caughtErrorsIgnorePattern: '^_',
       },
     ],
-    'no-unused-expressions': 'off',
+    'no-unused-expressions': 'warn',
     'no-await-in-loop': 'off',
-    'no-useless-constructor': 'off',
+    'no-useless-constructor': 'warn',
     'no-multi-spaces': 'off',
     'no-eq-null': 'off',
     'no-constant-condition': [
