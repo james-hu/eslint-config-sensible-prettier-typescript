@@ -141,8 +141,8 @@ function commonJsRules() {
  * - Code quality rules (unicorn, perfectionist, jsdoc)
  * - Custom rule overrides for TypeScript projects
  *
- * @param {string|string[]} files - File patterns to apply this configuration to
- * @param {import('eslint').Linter.Config} [languageOptions] - Additional language options to merge
+ * @param {import('eslint').Linter.Config['files']} [files] - File patterns to apply this configuration to
+ * @param {import('eslint').Linter.Config['languageOptions']} [languageOptions] - Additional language options to merge
  * @returns {import('eslint').Linter.Config} TypeScript ESLint configuration object
  */
 export function buildTsConfig(files, languageOptions) {
@@ -216,8 +216,8 @@ export function buildTsConfig(files, languageOptions) {
  * - Common JavaScript linting rules
  * - Custom rule overrides
  *
- * @param {string|string[]} files - File patterns to apply this configuration to
- * @param {import('eslint').Linter.Config} [languageOptions] - Additional language options to merge
+ * @param {import('eslint').Linter.Config['files']} [files] - File patterns to apply this configuration to
+ * @param {import('eslint').Linter.Config['languageOptions']} [languageOptions] - Additional language options to merge
  * @returns {import('eslint').Linter.Config} JavaScript ESLint configuration object
  */
 export function buildJsConfig(files, languageOptions) {
@@ -257,8 +257,8 @@ export function buildJsConfig(files, languageOptions) {
  * - JavaScript configurations for various file types
  * - Browser and Node.js globals where appropriate
  *
- * @param {object} options - Optional configuration options
- * @param {string} options.defaultSourceType - Default source type for TypeScript and JavaScript files that don't have source type indicated in the file name extension
+ * @param {{ defaultSourceType?: string }} [options] - Optional configuration options.
+ *   - defaultSourceType: Default source type for TypeScript and JavaScript files that don't have source type indicated in the file name extension.
  *
  * @returns {import('eslint').Linter.Config[]} Complete ESLint flat configuration array
  *
