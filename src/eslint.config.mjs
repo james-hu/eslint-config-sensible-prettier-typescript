@@ -183,6 +183,7 @@ export function buildTsConfig(files, languageOptions) {
 
       ...commonRules(),
       'no-redeclare': 'off', // It is safe to disable this rule when using TypeScript because TypeScript's compiler enforces this check.
+      'no-unused-vars': 'off', // false alarms in TypeScript
 
       // Custom rule overrides
       '@typescript-eslint/no-unused-vars': [
