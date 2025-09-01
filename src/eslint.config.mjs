@@ -41,6 +41,7 @@ function commonRules() {
     'perfectionist/sort-enums': 'off',
     'perfectionist/sort-object-types': 'off',
     'perfectionist/sort-modules': 'off',
+    'perfectionist/sort-switch-case': 'off',
 
     'unicorn/prefer-module': 'warn',
     'unicorn/prevent-abbreviations': 'off',
@@ -54,6 +55,15 @@ function commonRules() {
     'unicorn/no-null': 'off',
     'unicorn/no-object-as-default-parameter': 'off',
 
+    'no-unused-vars': [
+      'warn',
+      {
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
     'no-unused-expressions': 'off',
     'no-await-in-loop': 'off',
     'no-useless-constructor': 'off',
@@ -171,16 +181,21 @@ export function buildTsConfig(files, languageOptions) {
 
       ...jsdoc.configs['flat/recommended-typescript'].rules,
 
+      ...commonRules(),
+      'no-redeclare': off, // It is safe to disable this rule when using TypeScript because TypeScript's compiler enforces this check.
+
       // Custom rule overrides
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
+          varsIgnorePattern: '^_',
           argsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
         },
       ],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-var-requires': 'off',
-      ...commonRules(),
     },
     settings: {
       'import/parsers': {
