@@ -134,6 +134,23 @@ customiseESLintConfig(
 );
 ```
 
+### Example: Apply plugin `eslint-plugin-chai-friendly`
+```javascript
+customiseESLintConfig(config,
+  (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('.ts')),
+  (cfg) => {
+    cfg.languageOptions.globals = { ...globals.node, ...globals.mocha };
+    cfg.plugins = {...cfg.plugins, 'chai-friendly': pluginChaiFriendly};
+    cfg.rules = {
+      ...cfg.rules,
+      'no-unused-expressions': 'off', // disable original rule
+      '@typescript-eslint/no-unused-expressions': 'off', // disable TypeScript ESLint version
+      'chai-friendly/no-unused-expressions': 'warn',
+    }
+  },
+);
+```
+
 ### When to use
 
 - To override rules for specific file types.
