@@ -182,7 +182,7 @@ export function buildTsConfig(files, languageOptions) {
       ...jsdoc.configs['flat/recommended-typescript'].rules,
 
       ...commonRules(),
-      'no-redeclare': off, // It is safe to disable this rule when using TypeScript because TypeScript's compiler enforces this check.
+      'no-redeclare': 'off', // It is safe to disable this rule when using TypeScript because TypeScript's compiler enforces this check.
 
       // Custom rule overrides
       '@typescript-eslint/no-unused-vars': [
