@@ -110,7 +110,7 @@ const configArray = buildESLintConfig({ defaultSourceType: 'module' });
 // Example: Change all TypeScript configs to use 'commonjs' sourceType
 customiseESLintConfig(
   configArray,
-  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('.ts')),
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('*.ts')),
   (cfg) => { cfg.languageOptions.parserOptions.sourceType = 'commonjs'; }
 );
 
@@ -129,7 +129,7 @@ module.exports = configArray;
 ```javascript
 customiseESLintConfig(
   configArray,
-  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('.tsx')),
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('*.tsx')),
   (cfg) => { cfg.rules['no-console'] = 'off'; }
 );
 ```
@@ -137,7 +137,7 @@ customiseESLintConfig(
 ### Example: Apply plugin `eslint-plugin-chai-friendly`
 ```javascript
 customiseESLintConfig(config,
-  (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('.ts')),
+  (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('*.ts')),
   (cfg) => {
     cfg.languageOptions.globals = { ...globals.node, ...globals.mocha };
     cfg.plugins = {...cfg.plugins, 'chai-friendly': pluginChaiFriendly};
