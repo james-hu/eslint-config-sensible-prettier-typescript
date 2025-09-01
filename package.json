@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sensible-prettier-typescript",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "description": "Sensible default eslint rules and prettier rules for Typescript projects",
   "scripts": {
     "prettier": "prettier -w .",
