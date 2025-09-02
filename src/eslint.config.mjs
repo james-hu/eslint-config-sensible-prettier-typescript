@@ -54,6 +54,7 @@ function commonRules() {
     'unicorn/numeric-separators-style': 'off',
     'unicorn/no-null': 'off',
     'unicorn/no-object-as-default-parameter': 'off',
+    'unicorn/no-nested-ternary': 'off', // conflicts with prettier
 
     'no-unused-vars': [
       'warn',
