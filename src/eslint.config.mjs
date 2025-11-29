@@ -356,13 +356,36 @@ export function buildESLintConfig(options) {
  *
  * @example
  * ```javascript
- * const config = buildFullConfig();
+ * const { buildESLintConfig, customiseESLintConfig } = require('eslint-config-sensible-prettier-typescript');
+ * const { defineConfig } = require('eslint/config');
+ * const globals = require('globals');
  *
- * // Modify all TypeScript configurations
- * customiseConfig(config,
+ * // Modify all TypeScript configurations for applying desired globals
+ * const config = buildESLintConfig({ defaultSourceType: 'module' });
+ * customiseESLintConfig(
+ *   config,
  *   (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('*.ts')),
- *   (cfg) => { cfg.languageOptions.parserOptions.sourceType = 'commonjs'; }
+ *   (cfg) => {
+ *     cfg.languageOptions.globals = {
+ *       ...globals.node,
+ *       ...globals.browser,
+ *       ...globals.jquery,
+ *     };
+ *   },
  * );
+ * 
+ * // More overriding
+ * module.exports = defineConfig([
+ *   {
+ *     ignores: ['dist', 'coverage', 'report', 'node_modules'],
+ *   },
+ *   ...config,
+ *   {
+ *     rules: {
+ *       'unicorn/filename-case': 'off',
+ *     },
+ *   },
+ * ]);
  * ```
  */
 export function customiseESLintConfig(configArray, selector, modifier) {

@@ -100,7 +100,13 @@ export default {
 
 The `customiseESLintConfig` function allows you to programmatically modify specific configuration objects within an ESLint flat config array. This is useful for applying project-specific customizations to certain file types or rule sets.
 
-### Usage
+### Parameters
+
+- **configArray**: The ESLint configuration array to modify.
+- **selector**: A function that receives each config object and returns `true` for configs you want to modify.
+- **modifier**: A function that receives each selected config object and applies your changes.
+
+### Example: 'module' as default but override to 'commonjs' for .ts files
 
 ```javascript
 const { buildESLintConfig, customiseESLintConfig } = require('./src/eslint.config.cjs');
@@ -118,11 +124,42 @@ customiseESLintConfig(
 module.exports = configArray;
 ```
 
-### Parameters
+### Example: Specify "globals" for .ts files, add ignores, and override rules
 
-- **configArray**: The ESLint configuration array to modify.
-- **selector**: A function that receives each config object and returns `true` for configs you want to modify.
-- **modifier**: A function that receives each selected config object and applies your changes.
+```javascript
+const { buildESLintConfig, customiseESLintConfig } = require('eslint-config-sensible-prettier-typescript');
+const { defineConfig } = require('eslint/config');
+const globals = require('globals');
+
+// Modify all TypeScript configurations for applying desired globals
+const config = buildESLintConfig({ defaultSourceType: 'module' });
+customiseESLintConfig(
+  config,
+  (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('*.ts')),
+  (cfg) => {
+    cfg.languageOptions.globals = {
+      ...globals.node,
+      ...globals.browser,
+      ...globals.jquery,
+    };
+  },
+);
+
+// More overriding
+module.exports = defineConfig([
+  {
+    ignores: ['dist', 'coverage', 'report', 'node_modules'],
+  },
+  ...config,
+  {
+    rules: {
+      'unicorn/filename-case': 'off',
+    },
+  },
+]);
+```
+
+
 
 ### Example: Disable a rule for all `.tsx` files
 
