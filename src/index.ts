@@ -1,6 +1,6 @@
 import defaultPrettierConfig from './prettier.config.cjs';
 
-export * from './eslint.config.mjs';
+export * from './config.mjs';
 
 /**
  * Build Prettier config

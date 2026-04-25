@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import prettierConfig from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import jsdoc from 'eslint-plugin-jsdoc';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import unicornPlugin from 'eslint-plugin-unicorn';
@@ -12,7 +12,7 @@ import merge from 'lodash.merge';
 
 function commonPlugins() {
   return {
-    import: importPlugin,
+    'import-x': importPlugin,
     unicorn: unicornPlugin,
     perfectionist: perfectionistPlugin,
   };
@@ -31,7 +31,7 @@ function commonImportResolvers() {
 
 function commonRules() {
   return {
-    'import/no-unresolved': 'error',
+    'import-x/no-unresolved': 'error',
 
     'perfectionist/sort-classes': 'off',
     'perfectionist/sort-objects': 'off',
@@ -200,10 +200,10 @@ export function buildTsConfig(files, languageOptions) {
       '@typescript-eslint/no-var-requires': 'off',
     },
     settings: {
-      'import/parsers': {
+      'import-x/parsers': {
         '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', '.cts'],
       },
-      'import/resolver': commonImportResolvers(),
+      'import-x/resolver': commonImportResolvers(),
     },
   };
 }
@@ -241,7 +241,7 @@ export function buildJsConfig(files, languageOptions) {
       ...commonJsRules(),
     },
     settings: {
-      'import/resolver': commonImportResolvers(),
+      'import-x/resolver': commonImportResolvers(),
     },
   };
 }
