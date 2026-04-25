@@ -116,8 +116,10 @@ const configArray = buildESLintConfig({ defaultSourceType: 'module' });
 // Example: Change all TypeScript configs to use 'commonjs' sourceType
 customiseESLintConfig(
   configArray,
-  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('*.ts')),
-  (cfg) => { cfg.languageOptions.parserOptions.sourceType = 'commonjs'; }
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some((f) => typeof f === 'string' && f.endsWith('*.ts')),
+  (cfg) => {
+    cfg.languageOptions.parserOptions.sourceType = 'commonjs';
+  },
 );
 
 // Export the customized config
@@ -159,31 +161,33 @@ module.exports = defineConfig([
 ]);
 ```
 
-
-
 ### Example: Disable a rule for all `.tsx` files
 
 ```javascript
 customiseESLintConfig(
   configArray,
-  (cfg) => Array.isArray(cfg.files) && cfg.files.some(f => typeof f === 'string' && f.endsWith('*.tsx')),
-  (cfg) => { cfg.rules['no-console'] = 'off'; }
+  (cfg) => Array.isArray(cfg.files) && cfg.files.some((f) => typeof f === 'string' && f.endsWith('*.tsx')),
+  (cfg) => {
+    cfg.rules['no-console'] = 'off';
+  },
 );
 ```
 
 ### Example: Apply plugin `eslint-plugin-chai-friendly`
+
 ```javascript
-customiseESLintConfig(config,
+customiseESLintConfig(
+  config,
   (cfg) => [cfg.files].flat().some((f) => typeof f === 'string' && f.endsWith('*.ts')),
   (cfg) => {
     cfg.languageOptions.globals = { ...globals.node, ...globals.mocha };
-    cfg.plugins = {...cfg.plugins, 'chai-friendly': pluginChaiFriendly};
+    cfg.plugins = { ...cfg.plugins, 'chai-friendly': pluginChaiFriendly };
     cfg.rules = {
       ...cfg.rules,
       'no-unused-expressions': 'off', // disable original rule
       '@typescript-eslint/no-unused-expressions': 'off', // disable TypeScript ESLint version
       'chai-friendly/no-unused-expressions': 'warn',
-    }
+    };
   },
 );
 ```
