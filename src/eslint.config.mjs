@@ -373,7 +373,7 @@ export function buildESLintConfig(options) {
  *     };
  *   },
  * );
- * 
+ *
  * // More overriding
  * module.exports = defineConfig([
  *   {
