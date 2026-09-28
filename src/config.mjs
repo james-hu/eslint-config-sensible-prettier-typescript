@@ -56,7 +56,7 @@ function commonRules() {
     'unicorn/no-object-as-default-parameter': 'off',
     'unicorn/no-nested-ternary': 'off', // conflicts with prettier
 
-    'unicorn/name-replacements ': 'off', // err->error, obj->object, str->string, num->number, etc.
+    'unicorn/name-replacements': 'off', // err->error, obj->object, str->string, num->number, etc.
     'unicorn/consistent-boolean-name': 'off', //  It requires functions that return boolean to have a name starting with is/are/has/have/can/should/was/were/did/will/requires.
 
     'no-unused-vars': [
