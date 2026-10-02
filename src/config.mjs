@@ -58,6 +58,9 @@ function commonRules() {
 
     'unicorn/name-replacements': 'off', // err->error, obj->object, str->string, num->number, etc.
     'unicorn/consistent-boolean-name': 'off', //  It requires functions that return boolean to have a name starting with is/are/has/have/can/should/was/were/did/will/requires.
+    'uunicorn/no-break-in-nested-loop': 'off',
+    'unicorn/no-top-level-assignment-in-function': 'off',
+    'unicorn/consistent-class-member-order': 'off',
 
     'no-unused-vars': [
       'warn',
