@@ -63,7 +63,6 @@ function commonRules() {
     'unicorn/consistent-class-member-order': 'off',
     'unicorn/max-nested-calls': 'off',
     'unicorn/prefer-await': 'off',
-    'unicorn/no-break-in-nested-loop': 'off',
     'unicorn//single-line-block-comment-style': 'off',
 
     'no-unused-vars': [
