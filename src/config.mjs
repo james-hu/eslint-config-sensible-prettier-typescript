@@ -64,6 +64,7 @@ function commonRules() {
     'unicorn/max-nested-calls': 'off',
     'unicorn/prefer-await': 'off',
     'unicorn/single-line-block-comment-style': 'off',
+    'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
 
     'no-unused-vars': [
       'warn',
